@@ -23,7 +23,27 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <style>
+ 
+	<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Hide the mobile menu if it exists
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+      mobileMenu.style.display = 'none';
+    }
+
+    // Optional: Disable the menu toggle button
+    const toggleButton = document.querySelector('.menu-toggle');
+    if (toggleButton) {
+      toggleButton.disabled = true;
+      toggleButton.style.pointerEvents = 'none';
+      toggleButton.style.opacity = '0.5';
+    }
+  });
+</script>
+
+	
+	<style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 20px;
