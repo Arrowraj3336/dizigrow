@@ -21,30 +21,59 @@
 
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/georgia">
 <style>
-	.mobile-menu {
+	.mobile-menu,
+.mobile-menu *,
+.dropdown,
+.submenu {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
+
 </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  
 	<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Hide the mobile menu if it exists
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select and fully hide the mobile menu and dropdowns
     const mobileMenu = document.querySelector('.mobile-menu');
+    const dropdowns = document.querySelectorAll('.dropdown, .submenu');
+
     if (mobileMenu) {
       mobileMenu.style.display = 'none';
+      mobileMenu.style.visibility = 'hidden';
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.pointerEvents = 'none';
+      mobileMenu.style.height = '0';
+      mobileMenu.style.overflow = 'hidden';
     }
 
-    // Optional: Disable the menu toggle button
+    dropdowns.forEach(dropdown => {
+      dropdown.style.display = 'none';
+      dropdown.style.visibility = 'hidden';
+      dropdown.style.opacity = '0';
+      dropdown.style.pointerEvents = 'none';
+      dropdown.style.height = '0';
+      dropdown.style.overflow = 'hidden';
+    });
+
+    // Disable the menu toggle button if it exists
     const toggleButton = document.querySelector('.menu-toggle');
     if (toggleButton) {
+      toggleButton.removeEventListener('click', () => {});
       toggleButton.disabled = true;
       toggleButton.style.pointerEvents = 'none';
       toggleButton.style.opacity = '0.5';
     }
   });
+</script>
+
 </script>
 
 	
